@@ -1,0 +1,22 @@
+doctype html
+html
+    head
+        title
+    body
+        form(action='/noks', method='POST')
+            |Employee_id: 
+            input(type='text', name='option[eid]')
+            br
+            |Nok_Name: 
+            input(type='text', name='option[name]')
+            br
+            |Nok_PhoneNo: 
+            input(type='text' ,name='option[phoneNo]')
+            br
+            |Relationship: 
+            input(type='text' ,name='option[rship]')
+            br
+            |nok_address:
+            input(type='text', name='option[address]')
+            br
+            input(type='button' value='Create')

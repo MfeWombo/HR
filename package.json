@@ -17,12 +17,23 @@
   },
   "homepage": "https://github.com/isaacishaya/HR-SERVICES#readme",
   "dependencies": {
+    "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
     "compression": "^1.7.0",
     "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "events": "^1.1.1",
     "express": "^4.15.3",
+    "express-validator": "^3.2.1",
+    "formidable": "^1.1.1",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "jade": "^1.11.0",
+    "lodash": "^4.17.4",
     "method-override": "^2.3.9",
     "mongoose": "^4.11.5",
-    "morgan": "^1.8.2"
+    "morgan": "^1.8.2",
+    "pug": "^2.0.0-rc.4",
+    "util": "^0.10.3"
   }
 }

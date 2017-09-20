@@ -1,0 +1,15 @@
+extends layout.pug
+block content
+  .container
+    .jumbotron
+      form
+        .form-row
+        .form-group
+          label.col-form-label(for='inputPicture') 
+          input#inputPicture.form-control(type='file', placeholder='Picture')
+        .form-group
+          .form-check
+            label.form-check-label
+              input.form-check-input(type='checkbox')
+              |  Check me out
+        button.btn.btn-primary(type='submit', value='Upload Image', name='submit') Upload

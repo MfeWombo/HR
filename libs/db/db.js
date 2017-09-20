@@ -1,24 +1,33 @@
 /**
-*@auther isaac
+*@auther mfe
 *@discription hello world
 *
 /**
  * @module Library
  * */
 var mongoose = require('mongoose');
+    mongoose.Promise = require('bluebird');
 //var pureautoinc = require("mongoose-pureautoinc");
 //var url = require('url');
 
 
+var options ={
+    useMongoClient: true,
+    socketTimeoutMS: 0,
+    keepAlive: true,
+    reconnectTries: 30
+};
 
+mongoose.connect('mongodb://regedu:1234567@ds019926.mlab.com:19926/biodata', options);
+db = mongoose.connection;
 
 var CONN_DISCONNECTED = 0,
     CONN_DISCONNECTING = 3,
     CONN_CONNECTED = 1;
 
 
-var MONGOHQ_URI = 'mongodb://human_resource:123456i@ds135963.mlab.com:35963/human_resource'
-
+// var MONGOHQ_URI = 'mongodb://regedu:1234567@ds019926.mlab.com:19926/biodata';
+            
 
 var openConnection = function(callback) {
 
@@ -53,7 +62,7 @@ var openConnection = function(callback) {
 
 };
 
-var closeConnection = function () {
+var closeConnection = function() {
     if (mongoose.connection && mongoose.connection.readyState === CONN_CONNECTED) {
         mongoose.disconnect();
 

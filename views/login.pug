@@ -1,0 +1,17 @@
+extends layout.pug
+block content
+  .container
+    .jumbotron
+      form(action='/login', method='POST')
+        .form-group
+          label(for='exampleInputUsername') 
+          input#exampleInputUsername.form-control(type='username', aria-describedby='usernameHelp', placeholder='Enter username')
+          small#usernameHelp.form-text.text-muted We'll never share your username with anyone else.
+        .form-group
+          label(for='exampleInputPassword1') 
+            input#exampleInputPassword1.form-control(type='password', name='pword', placeholder='Password')
+        .form-check
+          label.form-check-label
+            input.form-check-input(type='checkbox')
+            |       Check me out
+        button.btn.btn-primary(type='submit') Submit

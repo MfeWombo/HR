@@ -1,0 +1,54 @@
+extends layout.pug
+block content
+  .container
+    .jumbotron
+      form(method='POST', action='/register')
+        .form-row
+          .form-group.col-md-6
+            label.col-form-label(for='inputEmail4') 
+            input#inputEmail4.form-control(type='email', name='', placeholder='Email')
+          .form-group.col-md-6
+            label.col-form-label(for='inputPassword4') 
+            input#inputPassword4.form-control(type='password',name='', placeholder='Password')
+        .form-row
+          .form-group.col-md-6
+            label.col-form-label(for='inputFirstName') 
+            input#inputFirstName.form-control(type='text', name='fname', placeholder='firstname')
+          .form-group.col-md-6
+            label.col-form-label(for='inputlastname') 
+            input#inputlastname.form-control(type='text',name='lname', placeholder='lastname')
+        .form-row
+        .form-group
+          label.col-form-label(for='inputUserName') 
+          input#inputUserName.form-control(type='text', name='uname', placeholder='username')
+        .form-group
+          label.col-form-label(for='inputNokName') 
+          input#inputNokName.form-control(type='text',name='nok-name', placeholder='nokname')
+        .form-group
+          label.col-form-label(for='inputNokPhone') 
+          input#inputNokPhone.form-control(type='text', name='nok_phone', placeholder='nokphone')
+        .form-group
+          label.col-form-label(for='inputAddress') 
+          input#inputAddress.form-control(type='textField',name='nok_address', placeholder='1234 Main St')
+        .form-group
+          label.col-form-label(for='SchoolName') 
+          input#inputSchoolName.form-control(type='text',name='school_name', placeholder='schoolName')
+        .form-group
+          label.col-form-label(for='Degree') 
+          input#inputDegreee.form-control(type='text', name='degree', placeholder='Degree')
+        .form-row
+          .form-group.col-md-6
+            label.col-form-label(for='inputCity') City
+            input#inputCity.form-control(type='text')
+          .form-group.col-md-4
+            label.col-form-label(for='inputState') State
+            select#inputState.form-control Choose
+          .form-group.col-md-2
+            label.col-form-label(for='inputZip') Zip
+            input#inputZip.form-control(type='text')
+        .form-group
+          .form-check
+            label.form-check-label
+              input.form-check-input(type='checkbox')
+              |  Check me out
+        button.btn.btn-primary(type='submit') Sign in

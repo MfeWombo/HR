@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title Text Input Control
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css', integrity='sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M', crossorigin='anonymous')
+    block scripts
+
+  body(bgcolor="#464646")
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      a.navbar-brand(href='/') Homepage
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href='/register') SignUp
+              span.sr-only (current)
+          li.nav-item.active 
+            a.nav-link(href='/login') Login
+              span.sr-only (current)
+          li.nav-item.active 
+            a.nav-link(href='/') LogOut
+              span.sr-only (current)
+          li.nav-item.active
+            a.nav-link.disabled(href='/upload') Upload
+              span.sr-only (current)
+    block content
+
+include ./includes/footer.pug

@@ -1,43 +1,43 @@
-var express = require("express");
-var methodOverride = require("method-override");
-var compress = require("compression");
-var bodyParser = require("body-parser");
-var cookieParser = require("cookie-parser");
-var morgan = require("morgan");
+global.db = require('./libs/db/db.js')();
+
+var express      = require('express'),
+  methodOverride = require('method-override'),
+  cookieParser   = require('cookie-parser'),
+  bodyParser     = require('body-parser'),
+  _              = require('lodash'),
+  promise    = require('bluebird'),
+  compress       = require('compression'),
+  logger         = require('morgan');
+
 var app = express();
 
-
-app.use(morgan('dev'));
-app.use(compress());
-app.use(methodOverride('X-HTTP-Method-Override'));
-app.use(bodyParser());
-app.use(cookieParser());
-app.use(express.static('public'));
-
-
-var router = require("./controllers/router");
-// var model = require('./controllers/livetest');
+var router = require ('./controller/router');
 app.enabled('trust proxy');
-app.set('view engine', 'jade');
-// app.set('views', __dirname + 'views');
-app.use(morgan('dev'));
+
+
+// Use all the following middlewares before the calling the home page.
+app.use(logger('dev'));
 app.use(compress());
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(express.static('public'));
+app.set('view engine','pug');
+app.set('views', __dirname + '/views');
 
 
-var port = process.env.PORT || 8000;
-var ip = process.env.IP || '127.0.0.1';
+
+var port = process.env.PORT || 8040;
+var ip = process.env.IP || '127.0.0.1'; 
 app.listen(port,ip);
 
 app.get('/', function(req,res){
-	res.send('Welcome to my world');
+	res.render('test');
+
+	 
 });
 
 router.route(app);
-// model.isaac(app);
+
 
 
 console.log("server started at " + ip + " and the port is " + port);
